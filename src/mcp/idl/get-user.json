@@ -1,0 +1,36 @@
+{
+  "name": "getUser",
+  "url": "/api/user",
+  "method": "GET",
+  "description": "根据用户 ID 获取用户信息",
+  "response": {
+    "type": "object",
+    "properties": [
+      { "name": "code", "type": "number", "description": "业务状态码，0 表示成功" },
+      { "name": "message", "type": "string", "description": "提示信息" },
+      {
+        "name": "data",
+        "type": "object",
+        "description": "用户实体",
+        "properties": [
+          { "name": "id", "type": "number", "description": "用户 ID" },
+          { "name": "name", "type": "string", "description": "用户名" },
+          { "name": "email", "type": "string", "description": "邮箱地址" },
+          { "name": "phone", "type": "string", "description": "手机号" },
+          { "name": "avatar", "type": "string", "description": "头像 URL" },
+          {
+            "name": "role",
+            "type": "string",
+            "description": "角色，枚举值：admin / editor / viewer"
+          },
+          {
+            "name": "createdAt",
+            "type": "string",
+            "format": "date-time",
+            "description": "注册时间"
+          }
+        ]
+      }
+    ]
+  }
+}
